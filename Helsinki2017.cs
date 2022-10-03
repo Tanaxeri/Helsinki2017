@@ -57,7 +57,7 @@ namespace Helsinki2017
                 {
 
                     bejutott = true;
-
+                    break;
                 }
 
             }
@@ -117,26 +117,13 @@ namespace Helsinki2017
             List<string> orszag = new List<string>();
             for (int i = 0; i < donto.Count; i++)
             {
-
-                bool szerepel = false;
-                for (int j = 0; j < orszag.Count; j++)
-                {
-
-                    if (donto[i]._orszag == orszag[j])
-                    {
-
-                        szerepel = true;
-
-                    }
-
-                }
-                if (szerepel == false)
+                bool szer = orszag.Contains(donto[i]._orszag);
+                if (szer == false)
                 {
 
                     orszag.Add(donto[i]._orszag);
 
                 }
-
             }
 
             int[] orszagseged = new int[orszag.Count];
